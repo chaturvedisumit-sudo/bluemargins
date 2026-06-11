@@ -1,5 +1,23 @@
 import { Instagram, BookOpen, Mail } from "lucide-react";
 
+const MediumIcon = ({ size = 18 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <ellipse cx="6.5" cy="12" rx="4.5" ry="6" />
+    <ellipse cx="16" cy="12" rx="2" ry="6" />
+    <ellipse cx="21" cy="12" rx="1" ry="6" />
+  </svg>
+);
+
 export default function Footer() {
   return (
     <footer
@@ -38,6 +56,16 @@ export default function Footer() {
               aria-label="Goodreads"
             >
               <BookOpen size={18} strokeWidth={1.2} />
+            </a>
+            <a
+              href="https://medium.com/@shalinic"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#C76F4E] transition-colors"
+              data-testid="footer-medium"
+              aria-label="Medium"
+            >
+              <MediumIcon size={18} />
             </a>
             <a
               href="#contact"
