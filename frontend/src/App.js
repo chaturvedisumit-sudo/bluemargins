@@ -12,13 +12,13 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Toaster
-        theme="dark"
+        theme="light"
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#0A1220",
-            border: "1px solid rgba(255,255,255,0.08)",
-            color: "#F1F5F9",
+            background: "#FFFBF1",
+            border: "1px solid rgba(30,58,74,0.12)",
+            color: "#1E3A4A",
             fontFamily: "'Outfit', sans-serif",
           },
         }}

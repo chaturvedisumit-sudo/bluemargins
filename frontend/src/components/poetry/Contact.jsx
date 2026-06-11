@@ -34,39 +34,39 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-36 border-t border-white/5 bg-[#06101F]"
+      className="relative py-24 md:py-36 border-t border-[#1E3A4A]/10 bg-[#DCE8E5]"
       data-testid="section-contact"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-12 gap-10 md:gap-16">
         <div className="col-span-12 md:col-span-5 reveal">
-          <p className="text-xs uppercase tracking-[0.35em] text-[#D4B886] mb-5">
+          <p className="text-xs uppercase tracking-[0.35em] text-[#C76F4E] mb-5">
             Send a letter
           </p>
-          <h2 className="font-serif-display text-4xl md:text-5xl font-light leading-[1.05] tracking-tight mb-8">
+          <h2 className="font-serif-display text-4xl md:text-5xl font-light leading-[1.05] tracking-tight mb-8 text-[#1E3A4A]">
             Write to me,
             <br />
             <span className="italic">slowly.</span>
           </h2>
-          <p className="text-slate-400 font-light leading-relaxed max-w-md">
+          <p className="text-[#3F5963] font-light leading-relaxed max-w-md">
             A note, a question, a favourite line, a request for signed copies —
-            send anything that begins with <em className="font-serif-display text-slate-200">&ldquo;dear&rdquo;</em> and ends in
+            send anything that begins with <em className="font-serif-display text-[#1E3A4A]">&ldquo;dear&rdquo;</em> and ends in
             patience.
           </p>
 
-          <div className="mt-12 space-y-3 text-sm text-slate-500">
+          <div className="mt-12 space-y-3 text-sm text-[#5C7682]">
             <p>
-              <span className="text-xs uppercase tracking-[0.25em] text-slate-400 block mb-1">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#7A8E94] block mb-1">
                 Email
               </span>
-              <span className="font-serif-display italic text-lg text-slate-200">
+              <span className="font-serif-display italic text-lg text-[#1E3A4A]">
                 hello@postcardsandpoetry.com
               </span>
             </p>
             <p className="pt-4">
-              <span className="text-xs uppercase tracking-[0.25em] text-slate-400 block mb-1">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#7A8E94] block mb-1">
                 Letters take
               </span>
-              <span className="font-serif-display italic text-lg text-slate-200">
+              <span className="font-serif-display italic text-lg text-[#1E3A4A]">
                 a few tides to reach the desk.
               </span>
             </p>
@@ -79,7 +79,7 @@ export default function Contact() {
           data-testid="contact-form"
         >
           <div>
-            <label className="text-[10px] uppercase tracking-[0.3em] text-slate-500 block mb-2">
+            <label className="text-[10px] uppercase tracking-[0.3em] text-[#7A8E94] block mb-2">
               Your name
             </label>
             <input
@@ -88,12 +88,12 @@ export default function Contact() {
               value={form.name}
               onChange={onChange}
               placeholder="who is writing?"
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder-slate-600 focus:border-[#D4B886] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg"
+              className="w-full bg-transparent border-b border-[#1E3A4A]/30 text-[#1E3A4A] placeholder-[#92A3A9] focus:border-[#C76F4E] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg"
               data-testid="contact-input-name"
             />
           </div>
           <div>
-            <label className="text-[10px] uppercase tracking-[0.3em] text-slate-500 block mb-2">
+            <label className="text-[10px] uppercase tracking-[0.3em] text-[#7A8E94] block mb-2">
               Email
             </label>
             <input
@@ -102,12 +102,12 @@ export default function Contact() {
               value={form.email}
               onChange={onChange}
               placeholder="where shall I write back?"
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder-slate-600 focus:border-[#D4B886] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg"
+              className="w-full bg-transparent border-b border-[#1E3A4A]/30 text-[#1E3A4A] placeholder-[#92A3A9] focus:border-[#C76F4E] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg"
               data-testid="contact-input-email"
             />
           </div>
           <div>
-            <label className="text-[10px] uppercase tracking-[0.3em] text-slate-500 block mb-2">
+            <label className="text-[10px] uppercase tracking-[0.3em] text-[#7A8E94] block mb-2">
               Your letter
             </label>
             <textarea
@@ -116,7 +116,7 @@ export default function Contact() {
               onChange={onChange}
               rows={5}
               placeholder="say anything. say it slowly."
-              className="w-full bg-transparent border-b border-white/20 text-white placeholder-slate-600 focus:border-[#D4B886] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg resize-none"
+              className="w-full bg-transparent border-b border-[#1E3A4A]/30 text-[#1E3A4A] placeholder-[#92A3A9] focus:border-[#C76F4E] focus:outline-none rounded-none px-0 py-3 transition-colors font-serif-display italic text-lg resize-none"
               data-testid="contact-input-message"
             />
           </div>
@@ -124,7 +124,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={loading}
-            className="group inline-flex items-center gap-3 bg-[#D4B886] text-[#040810] hover:bg-[#E8CFA1] disabled:opacity-60 disabled:cursor-not-allowed transition-colors px-8 py-4 text-xs font-medium tracking-[0.25em] uppercase"
+            className="group inline-flex items-center gap-3 bg-[#1E3A4A] text-[#F5EBD3] hover:bg-[#2D6E7E] disabled:opacity-60 disabled:cursor-not-allowed transition-colors px-8 py-4 text-xs font-medium tracking-[0.25em] uppercase"
             data-testid="contact-submit-btn"
           >
             {loading ? "Sending…" : "Send the letter"}

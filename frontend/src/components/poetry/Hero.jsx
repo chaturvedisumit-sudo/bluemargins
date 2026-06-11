@@ -2,8 +2,6 @@ import { ArrowRight } from "lucide-react";
 
 const POET_IMG =
   "https://customer-assets.emergentagent.com/job_5518da31-3818-4830-8b4a-5491945b0483/artifacts/q983tzlw_20260426_205838.jpg";
-const OCEAN_BG =
-  "https://images.unsplash.com/photo-1594293390817-a4554dc6a713?crop=entropy&cs=srgb&fm=jpg&q=85";
 
 export default function Hero() {
   return (
@@ -12,50 +10,45 @@ export default function Hero() {
       className="relative pt-32 md:pt-40 pb-24 md:pb-32 overflow-hidden"
       data-testid="section-home"
     >
-      {/* Ambient ocean background */}
-      <div
-        className="absolute inset-0 opacity-25"
-        style={{
-          backgroundImage: `url(${OCEAN_BG})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#040810] via-[#040810]/85 to-[#040810]" />
+      {/* Soft watercolor wash — sea meets sand */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-[#9CC5CF] opacity-40 blur-3xl" />
+        <div className="absolute top-1/2 -left-40 w-[420px] h-[420px] rounded-full bg-[#E8B89A] opacity-50 blur-3xl" />
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* Left: copy */}
         <div className="md:col-span-7 reveal">
           <p
-            className="text-xs uppercase tracking-[0.35em] text-[#D4B886] mb-8 font-sans-ui"
+            className="text-xs uppercase tracking-[0.35em] text-[#C76F4E] mb-8 font-sans-ui"
             data-testid="hero-overline"
           >
             A word from the poet
           </p>
 
           <h1
-            className="font-serif-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-light text-[#F1F5F9] mb-10"
+            className="font-serif-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight font-light text-[#1E3A4A] mb-10"
             data-testid="hero-title"
           >
             Words washed
             <br />
-            <span className="italic text-[#D4B886]">ashore</span>, between
+            <span className="italic text-[#C76F4E]">ashore</span>, between
             <br />
             tide and twilight.
           </h1>
 
-          <div className="max-w-xl space-y-5 text-slate-300 leading-relaxed font-light text-base md:text-lg">
+          <div className="max-w-xl space-y-5 text-[#3F5963] leading-relaxed font-light text-base md:text-lg">
             <p>
               Some evenings the sea writes for me. I only sit close enough to
               listen — to the salt, to the lit-up boats, to the bougainvillea
               forgetting it is December.
             </p>
-            <p className="text-slate-400 italic font-serif-display text-lg">
+            <p className="text-[#5C7682] italic font-serif-display text-lg">
               &ldquo;Every poem here is a postcard. Slip it into your pocket. Carry
               it somewhere quieter.&rdquo;
             </p>
             <p
-              className="font-serif-display italic text-[#D4B886] text-lg pt-2"
+              className="font-serif-display italic text-[#C76F4E] text-lg pt-2"
               data-testid="hero-signature"
             >
               — Shalini Chaturvedi
@@ -65,7 +58,7 @@ export default function Hero() {
           <div className="mt-12 flex flex-wrap gap-4 items-center">
             <a
               href="#poems"
-              className="group inline-flex items-center gap-3 bg-[#D4B886] text-[#040810] hover:bg-[#E8CFA1] transition-colors px-8 py-4 text-xs font-medium tracking-[0.25em] uppercase"
+              className="group inline-flex items-center gap-3 bg-[#1E3A4A] text-[#F5EBD3] hover:bg-[#2D6E7E] transition-colors px-8 py-4 text-xs font-medium tracking-[0.25em] uppercase"
               data-testid="hero-read-collection-btn"
             >
               Read the collection
@@ -76,7 +69,7 @@ export default function Hero() {
             </a>
             <a
               href="#books"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-slate-300 hover:text-white border-b border-white/20 hover:border-[#D4B886] pb-1 transition-colors"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#1E3A4A] hover:text-[#C76F4E] border-b border-[#1E3A4A]/30 hover:border-[#C76F4E] pb-1 transition-colors"
               data-testid="hero-browse-books-btn"
             >
               Browse the books
@@ -92,17 +85,17 @@ export default function Hero() {
                 src={POET_IMG}
                 alt="Shalini Chaturvedi"
                 className="w-full h-[420px] object-cover"
-                style={{ filter: "saturate(0.85) contrast(1.05)" }}
+                style={{ filter: "saturate(0.9) contrast(1.02)" }}
                 data-testid="hero-poet-image"
               />
               <div className="postcard-stamp-text">par avion</div>
             </div>
             {/* Floating label */}
-            <div className="absolute -bottom-6 -left-6 bg-[#040810] border border-white/10 px-5 py-3 hidden sm:block">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-slate-400">
+            <div className="absolute -bottom-6 -left-6 bg-[#FFFBF1] border border-[#1E3A4A]/10 px-5 py-3 hidden sm:block shadow-sm">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#5C7682]">
                 From the balcony
               </p>
-              <p className="font-serif-display italic text-[#D4B886] text-sm mt-1">
+              <p className="font-serif-display italic text-[#C76F4E] text-sm mt-1">
                 somewhere by the sea
               </p>
             </div>

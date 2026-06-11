@@ -44,24 +44,24 @@ const PUBLISHED = [
 function BookRow({ b, primary, testid }) {
   return (
     <div
-      className="book-row group grid grid-cols-12 items-baseline gap-4 py-7 border-t border-white/5"
+      className="book-row group grid grid-cols-12 items-baseline gap-4 py-7 border-t border-[#1E3A4A]/10"
       data-testid={testid}
     >
-      <div className="col-span-12 md:col-span-2 text-xs uppercase tracking-[0.25em] text-slate-500 font-sans-ui">
+      <div className="col-span-12 md:col-span-2 text-xs uppercase tracking-[0.25em] text-[#7A8E94] font-sans-ui">
         {b.year}
       </div>
       <div className="col-span-12 md:col-span-7">
-        <h3 className="font-serif-display text-2xl md:text-3xl font-light text-[#F1F5F9] group-hover:text-[#D4B886] transition-colors">
+        <h3 className="font-serif-display text-2xl md:text-3xl font-light text-[#1E3A4A] group-hover:text-[#C76F4E] transition-colors">
           {b.title}
         </h3>
-        <p className="mt-2 text-sm text-slate-400 font-light italic font-serif-display">
+        <p className="mt-2 text-sm text-[#5C7682] font-light italic font-serif-display">
           {b.note}
         </p>
       </div>
       <div className="col-span-12 md:col-span-3 flex md:justify-end">
         <a
           href="#shop"
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#D4B886] hover:text-[#E8CFA1] border-b border-[#D4B886]/40 pb-1"
+          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C76F4E] hover:text-[#A85838] border-b border-[#C76F4E]/40 pb-1"
           data-testid={`${testid}-cta`}
         >
           {primary ? b.status : b.cta}
@@ -82,17 +82,17 @@ export default function Books() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-12 gap-6 mb-16 reveal">
           <div className="col-span-12 md:col-span-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#D4B886] mb-5">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#C76F4E] mb-5">
               The shelf
             </p>
-            <h2 className="font-serif-display text-4xl md:text-5xl font-light leading-[1.05] tracking-tight">
+            <h2 className="font-serif-display text-4xl md:text-5xl font-light leading-[1.05] tracking-tight text-[#1E3A4A]">
               Books, like the sea,
               <br />
               <span className="italic">arrive in waves.</span>
             </h2>
           </div>
           <div className="col-span-12 md:col-span-7 md:col-start-6 flex items-end">
-            <p className="text-slate-400 font-light leading-relaxed max-w-md">
+            <p className="text-[#3F5963] font-light leading-relaxed max-w-md">
               A small but slow-growing body of work — written by candlelight,
               edited by ocean. Below: what&apos;s coming, and what already exists in
               print.
@@ -102,10 +102,10 @@ export default function Books() {
 
         {/* Upcoming */}
         <div className="reveal">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-2">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#7A8E94] mb-2">
             Upcoming works
           </p>
-          <div className="border-b border-white/5">
+          <div className="border-b border-[#1E3A4A]/10">
             {UPCOMING.map((b) => (
               <BookRow
                 key={b.id}
@@ -119,10 +119,10 @@ export default function Books() {
 
         {/* Published */}
         <div className="reveal mt-20">
-          <p className="text-xs uppercase tracking-[0.3em] text-slate-500 mb-2">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#7A8E94] mb-2">
             Published volumes
           </p>
-          <div className="border-b border-white/5">
+          <div className="border-b border-[#1E3A4A]/10">
             {PUBLISHED.map((b) => (
               <BookRow key={b.id} b={b} testid={`book-item-${b.id}`} />
             ))}

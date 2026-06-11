@@ -5,8 +5,8 @@ html {
 }
 
 .App {
-  background-color: #040810;
-  color: #F1F5F9;
+  background-color: #F5EBD3;
+  color: #1E3A4A;
   font-family: 'Outfit', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
@@ -27,7 +27,8 @@ html {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.035;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
@@ -43,7 +44,7 @@ html {
   left: 0;
   width: 0;
   height: 1px;
-  background: #D4B886;
+  background: #C76F4E;
   transition: width 0.4s ease;
 }
 .nav-link:hover::after,
@@ -62,14 +63,14 @@ html {
   transform: translateY(0);
 }
 
-/* Postcard frame */
+/* Postcard frame — bright white card on the sand background */
 .postcard {
-  background: #f3ead7;
+  background: #FFFBF1;
   padding: 18px 18px 60px 18px;
   position: relative;
   box-shadow:
-    0 25px 60px -20px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    0 30px 60px -25px rgba(30, 58, 74, 0.35),
+    0 0 0 1px rgba(30, 58, 74, 0.08) inset;
   transform: rotate(-2.2deg);
   transition: transform 0.6s ease;
 }
@@ -85,7 +86,7 @@ html {
   font-family: 'Outfit', sans-serif;
   font-size: 9px;
   letter-spacing: 0.3em;
-  color: #5b4a2e;
+  color: #8C6E3F;
   text-transform: uppercase;
 }
 .postcard::after {
@@ -96,9 +97,9 @@ html {
   width: 46px;
   height: 56px;
   background:
-    linear-gradient(135deg, #1a2a3f 0%, #4a607a 100%);
-  border: 3px solid #f3ead7;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+    linear-gradient(135deg, #2D6E7E 0%, #5DA6B5 100%);
+  border: 3px solid #FFFBF1;
+  box-shadow: 0 0 0 1px rgba(30, 58, 74, 0.15);
 }
 
 .postcard-stamp-text {
@@ -108,7 +109,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 11px;
-  color: #5b4a2e;
+  color: #8C6E3F;
   letter-spacing: 0.1em;
   transform: rotate(-8deg);
   z-index: 2;
@@ -116,8 +117,8 @@ html {
 
 /* Selection color */
 ::selection {
-  background: #D4B886;
-  color: #040810;
+  background: #C76F4E;
+  color: #FFFBF1;
 }
 
 /* Scrollbar */
@@ -125,14 +126,14 @@ html {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #040810;
+  background: #ECE0C4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a2235;
+  background: #C8B58A;
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3550;
+  background: #B79E6E;
 }
 
 /* Custom cursor accent on poetry blocks */
@@ -147,7 +148,7 @@ html {
   top: 0.5rem;
   bottom: 0.5rem;
   width: 1px;
-  background: linear-gradient(to bottom, transparent, #D4B886, transparent);
+  background: linear-gradient(to bottom, transparent, #C76F4E, transparent);
 }
 
 /* Book row hover */
@@ -156,7 +157,7 @@ html {
 }
 .book-row:hover {
   padding-left: 1.5rem;
-  background: rgba(212, 184, 134, 0.04);
+  background: rgba(199, 111, 78, 0.06);
 }
 .book-row:hover .book-arrow {
   transform: translateX(8px);
@@ -168,7 +169,6 @@ html {
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Floating palm decoration */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(1deg); }

@@ -48,7 +48,7 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="grain min-h-screen bg-[#040810] text-[#F1F5F9]" data-testid="landing-root">
+    <div className="grain min-h-screen bg-[#F5EBD3] text-[#1E3A4A]" data-testid="landing-root">
       <Nav active={active} />
       <main>
         <Hero />
