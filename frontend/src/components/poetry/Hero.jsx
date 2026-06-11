@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-const POET_IMG =
-  "https://customer-assets.emergentagent.com/job_5518da31-3818-4830-8b4a-5491945b0483/artifacts/q983tzlw_20260426_205838.jpg";
+const POET_IMG = "/poet-hero.jpg";
 
 export default function Hero() {
   return (
