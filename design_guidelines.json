@@ -1,0 +1,164 @@
+{
+  "archetype_and_theme": {
+    "theme": "DARK",
+    "archetype": "Archetype 5 (Luxury) mixed with Archetype 1 (Organic & Earthy)",
+    "reasoning": "The poet's provided hero image features a night scene with a beach/sea backdrop and warm pool lights. To capture this moody, atmospheric twilight aesthetic, we employ a dark 'Luxury/Cinematic' archetype. It leans into 'Oceanic Dark Mode' with abyssal navy tones and warm sand/amber accents, prioritizing elegant editorial typography and heavy negative space typical of high-end poetry collections. We avoid generic gradients in favor of subtle noise, vintage textures, and deep solids."
+  },
+  "color_system": {
+    "background": {
+      "base": "#040810",
+      "surface": "#0A1220",
+      "overlay": "rgba(4, 8, 16, 0.6)"
+    },
+    "text": {
+      "primary": "#F1F5F9",
+      "secondary": "#94A3B8",
+      "muted": "#64748B",
+      "accent": "#D4B886"
+    },
+    "brand": {
+      "primary": "#D4B886",
+      "primary_hover": "#E8CFA1",
+      "secondary": "#4A607A",
+      "border": "rgba(255, 255, 255, 0.08)"
+    },
+    "rules": [
+      "Never use pure black (#000000). Backgrounds must be tinted with deep oceanic navy.",
+      "Never use default purple/teal SaaS gradients.",
+      "Ensure minimum 4.5:1 contrast for all text reading. Poetry sections require extremely high contrast for readability.",
+      "Use #D4B886 (Warm Sand/Pool Light) sparingly for interactive elements, highlights, and subtle accents."
+    ]
+  },
+  "typography": {
+    "fonts": {
+      "headings": "'Cormorant Garamond', serif",
+      "body": "'Outfit', sans-serif",
+      "poetry": "'Cormorant Garamond', serif",
+      "instructions_for_setup": "Import both fonts from Google Fonts: @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap');"
+    },
+    "sizing": {
+      "h1_hero": "text-5xl sm:text-6xl lg:text-7xl tracking-tighter leading-none font-light",
+      "h2_section": "text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none font-normal",
+      "h3_card": "text-xl sm:text-2xl font-light",
+      "body": "text-base leading-relaxed font-light",
+      "poetry_text": "text-lg md:text-xl lg:text-2xl leading-loose font-normal italic tracking-wide",
+      "labels": "text-xs tracking-[0.2em] uppercase text-slate-400 font-medium"
+    },
+    "rules": [
+      "DO NOT center headings by default. Embrace left-aligned, asymmetrical typography.",
+      "Use 'italic' formatting for poetry excerpts to give them a distinctive editorial voice.",
+      "Poetry text requires 'leading-loose' (line-height 2+) to allow the words to breathe.",
+      "Apply tight tracking to large display headings, wide tracking to small uppercase labels."
+    ]
+  },
+  "spacing_and_layout": {
+    "philosophy": "Heavy negative space. The layout should feel like an expensive, carefully curated art gallery or a physical poetry chapbook.",
+    "grid_system": "Asymmetrical. Use CSS grids (e.g., grid-cols-1 md:grid-cols-12) where images span 5 columns and text spans 6 columns, leaving a 1-column gap. Avoid perfectly symmetrical 50/50 splits.",
+    "section_padding": "py-24 md:py-32",
+    "element_spacing": "gap-8 md:gap-16",
+    "surface_styles": {
+      "cards": "Cardless design preferred. If boundaries are needed, use a 1px delicate border (border-white/5) with a transparent background, or a subtle noise texture. NO drop shadows on dark mode. Use soft 1px inner glows if necessary."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#D4B886] text-[#040810] hover:bg-[#E8CFA1] transition-colors rounded-none px-8 py-4 text-sm font-medium tracking-wide uppercase",
+      "secondary": "bg-transparent border border-white/20 text-[#F1F5F9] hover:bg-white/5 transition-colors rounded-none px-8 py-4 text-sm font-medium tracking-wide uppercase",
+      "amazon_link": "flex items-center gap-2 border-b border-[#D4B886] text-[#D4B886] hover:text-[#E8CFA1] transition-colors pb-1 uppercase tracking-wider text-sm"
+    },
+    "navigation": {
+      "style": "Glassmorphism mixed with edge-to-edge border. backdrop-blur-md bg-[#040810]/70 border-b border-white/5",
+      "links": "text-sm text-slate-400 hover:text-white transition-colors"
+    },
+    "form_elements": {
+      "input": "bg-transparent border-b border-white/20 text-white placeholder-slate-500 focus:border-[#D4B886] focus:outline-none focus:ring-0 rounded-none px-0 py-3 transition-colors",
+      "textarea": "bg-transparent border-b border-white/20 text-white placeholder-slate-500 focus:border-[#D4B886] focus:outline-none focus:ring-0 rounded-none px-0 py-3 min-h-[120px] transition-colors"
+    }
+  },
+  "motion_and_interactions": {
+    "scroll": "Smooth scrolling required (use Lenis if possible, or CSS scroll-behavior: smooth).",
+    "reveals": "Fade-in and subtle slide-up (translate-y-4 to 0) on scroll using Framer Motion.",
+    "hover": "Images should have a very subtle scale effect (scale-105) inside an overflow-hidden container. Text links should feature an animated underline."
+  },
+  "media_and_assets": {
+    "images": {
+      "hero_poet": {
+        "url": "https://customer-assets.emergentagent.com/job_5518da31-3818-4830-8b4a-5491945b0483/artifacts/q983tzlw_20260426_205838.jpg",
+        "description": "Shalini Chaturvedi at night, coastal pool backdrop. Use this in the hero section. Treat with a 'postcard' style (white frame, slight rotation, overlapping background elements) or as a stark, dramatic portrait taking up 50% of the viewport width.",
+        "alt": "Shalini Chaturvedi - Poet"
+      },
+      "texture_background": {
+        "url": "https://images.unsplash.com/photo-1705837863332-7162639852d8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHx2aW50YWdlJTIwYmxhbmslMjBwb3N0Y2FyZCUyMHRleHR1cmV8ZW58MHx8fHwxNzgxMTY5NzI2fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Vintage creased paper texture. Use this at low opacity (e.g., mix-blend-overlay or opacity-10) in the background of the 'Poems' section to simulate reading off aged paper, or as the background of the postcard frame in the hero.",
+        "alt": "Vintage paper texture"
+      },
+      "ocean_mood": {
+        "url": "https://images.unsplash.com/photo-1594293390817-a4554dc6a713?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxkYXJrJTIwb2NlYW4lMjB3YXZlcyUyMG5pZ2h0dGltZXxlbnwwfHx8fDE3ODExNjk3MjZ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Dark nighttime ocean waves. Use this as a dark, moody background for the 'Books' or 'Contact' section with a heavy dark overlay (bg-black/60) to maintain text contrast.",
+        "alt": "Dark ocean at night"
+      }
+    },
+    "icons": {
+      "library": "lucide-react",
+      "usage": "Use sparingly. Feather-light stroke weights (1px to 1.5px) only. Do not rely heavily on icons; let the typography speak."
+    }
+  },
+  "section_blueprints": {
+    "header": {
+      "layout": "Fixed top, backdrop blur. Left: 'postcardsandpoetry' logo (Cormorant Garamond, italic). Right: Desktop nav links (Home, Books, Poems, Shop, Contact). Mobile: Hamburger menu.",
+      "test_ids": {
+        "nav": "main-navigation",
+        "links": "nav-link-{section}"
+      }
+    },
+    "hero_home": {
+      "layout": "Grid 12 columns. Left (col 1-6): Overline label 'A WORD FROM THE POET', massive H1 heading 'Words washed ashore.', followed by a short poetic bio paragraph. CTA 'Read the collection'. Right (col 7-12): The poet's image placed inside a slightly rotated 'postcard' container (white background, padded, subtle inner shadow).",
+      "test_ids": {
+        "container": "section-home",
+        "cta": "hero-read-collection-btn"
+      }
+    },
+    "books_upcoming_published": {
+      "layout": "Dark background with the ocean_mood image at 10% opacity. Split into two areas: 'Upcoming Works' and 'Published Volumes'. List them as elegant horizontal rows rather than standard blocky cards. Left: Year/Status. Center: Book Title (Serif, large). Right: 'Pre-order' or 'View'.",
+      "test_ids": {
+        "container": "section-books",
+        "book_row": "book-item-{id}"
+      }
+    },
+    "poems_showcase": {
+      "layout": "The visual anchor of the site. Use the vintage paper texture delicately blended into a deep navy background. Centered, highly generous margins. Present one award-winning poem fully. Use blockquotes with an accent-colored vertical line. Below, a grid of 3 'Selected Poems' (titles & short excerpts).",
+      "test_ids": {
+        "container": "section-poems",
+        "poem_card": "poem-card-{id}"
+      }
+    },
+    "shop": {
+      "layout": "Minimalist gallery. 2 or 3 placeholder book covers (use stylized CSS rectangles with titles if no covers exist). Below each, an 'Available on Amazon' link styled with the amazon_link component style.",
+      "test_ids": {
+        "container": "section-shop",
+        "amazon_link": "shop-amazon-redirect-btn-{id}"
+      }
+    },
+    "contact": {
+      "layout": "Grid 12 columns. Left (col 2-5): 'Send a letter', poetic copy encouraging reach-outs. Right (col 7-11): Minimalist, border-bottom-only input fields (Name, Email, Message). Primary submit button.",
+      "test_ids": {
+        "container": "section-contact",
+        "form": "contact-form",
+        "submit_btn": "contact-submit-btn"
+      }
+    },
+    "footer": {
+      "layout": "Massive bottom padding. Large centered 'postcardsandpoetry' in serif. Copyright text below.",
+      "test_ids": {
+        "container": "main-footer"
+      }
+    }
+  },
+  "instructions_to_main_agent": {
+    "styling": "Use raw Tailwind CSS and semantic HTML for layout. Do not over-rely on Shadcn UI cards or generic containers, as they will kill the editorial vibe. For the contact form, use standard React state or uncontrolled inputs styled beautifully with the form_elements classes.",
+    "responsiveness": "Ensure the poetry text scales down gracefully on mobile but retains its loose line-height. Images must not exceed 80vh on mobile to prevent massive scrolling gaps.",
+    "testing": "All elements must have the required data-testid attributes attached for testing purposes.",
+    "content": "Use beautiful placeholder text for poems and books (e.g., 'The Salt and the Silence', 'Midnight Tide'). Do not use 'Lorem Ipsum' - write contextually relevant poetic placeholders.",
+    "file_type": "Implement using Javascript/JSX (.js/.jsx), NOT Typescript."
+  }
+}
