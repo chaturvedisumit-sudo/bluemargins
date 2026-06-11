@@ -17,10 +17,10 @@ export default function Nav({ active }) {
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#F5EBD3]/80 border-b border-[#1E3A4A]/10"
       data-testid="main-navigation"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <a
           href="#home"
-          className="font-serif-display italic text-xl text-[#1E3A4A] tracking-wide"
+          className="font-serif-display italic text-2xl md:text-3xl text-[#1E3A4A] tracking-wide leading-none"
           data-testid="brand-logo"
         >
           postcards<span className="text-[#C76F4E]">&amp;</span>poetry
@@ -31,8 +31,8 @@ export default function Nav({ active }) {
             <a
               key={l.id}
               href={`#${l.id}`}
-              className={`nav-link text-xs uppercase tracking-[0.25em] font-sans-ui ${
-                active === l.id ? "active text-[#1E3A4A]" : "text-[#5C7682]"
+              className={`nav-link text-xs uppercase tracking-[0.25em] font-sans-ui font-medium ${
+                active === l.id ? "active text-[#1E3A4A]" : "text-[#2D5266]"
               }`}
               data-testid={`nav-link-${l.id}`}
             >
@@ -59,8 +59,8 @@ export default function Nav({ active }) {
                 key={l.id}
                 href={`#${l.id}`}
                 onClick={() => setOpen(false)}
-                className={`text-sm uppercase tracking-[0.25em] ${
-                  active === l.id ? "text-[#C76F4E]" : "text-[#3F5963]"
+                className={`text-sm uppercase tracking-[0.25em] font-medium ${
+                  active === l.id ? "text-[#C76F4E]" : "text-[#2D5266]"
                 }`}
                 data-testid={`nav-link-mobile-${l.id}`}
               >
