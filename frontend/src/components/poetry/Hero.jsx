@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
         {/* Left: copy */}
-        <div className="md:col-span-7 reveal">
+        <div className="md:col-span-7 reveal order-2 md:order-1">
           <p
             className="text-xs uppercase tracking-[0.35em] text-[#C76F4E] mb-8 font-sans-ui"
             data-testid="hero-overline"
@@ -78,7 +78,7 @@ export default function Hero() {
         </div>
 
         {/* Right: postcard with poet image */}
-        <div className="md:col-span-5 reveal flex justify-center md:justify-end">
+        <div className="md:col-span-5 reveal flex justify-center md:justify-end order-1 md:order-2">
           <div className="relative w-full max-w-sm">
             <div className="postcard">
               <img
