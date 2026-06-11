@@ -12,23 +12,26 @@ from emergentintegrations.llm.chat import LlmChat, UserMessage, ImageContent
 load_dotenv(Path(__file__).resolve().parent.parent / "backend" / ".env")
 
 SRC_URL = "https://customer-assets.emergentagent.com/job_5518da31-3818-4830-8b4a-5491945b0483/artifacts/q983tzlw_20260426_205838.jpg"
+LOCAL_SRC = Path("/app/frontend/public/poet-hero.jpg")
 DEST_DIR = Path("/app/frontend/public")
 DEST_PATH = DEST_DIR / "poet-hero.jpg"
 
 PROMPT = (
-    "Re-render the SAME woman in the SAME exact pose, same dress, same location "
-    "(rooftop balcony at night by the sea with palm trees and pool), but transform "
-    "the photo as if shot by a professional editorial portrait photographer. "
-    "Specifically: brighten the overall exposure tastefully so her face and the "
-    "background are clearly visible; lift the shadows; warm the highlights gently; "
-    "render skin tone naturally and flattering; preserve her facial features, "
-    "expression, hair and identity EXACTLY — do not alter her face. "
-    "Remove the lens flare, light streaks and glare/shiny artifacts (the diagonal "
-    "streaks crossing the image and any bright reflection blobs) so the scene looks "
-    "clean. Keep the warm pool lights and city lights in the background, but make "
-    "them feel like soft, cinematic bokeh rather than harsh glare. Maintain the "
-    "same composition (subject on the right, ocean & palms on the left, pool on "
-    "the lower right). Output a single sharp, color-graded, magazine-quality image."
+    "Refine THIS portrait. Keep the SAME woman, same face, same identity, same "
+    "dress, same setting (rooftop balcony at night by the sea). Make two subtle "
+    "adjustments only:\n"
+    "1) Brighten her FACE gently and naturally, as if it were lit by a soft "
+    "lantern or warm ambient light — NOT a camera flash. No harsh white "
+    "highlights, no washed-out skin, no over-exposed cheeks. Lift the shadows "
+    "on her face just enough to make it visible and warm; keep the rest of the "
+    "image (sky, sea, palms, pool) at its current brightness so the mood stays "
+    "evening/twilight.\n"
+    "2) Make her smile a touch warmer and more relaxed — a softly happy, "
+    "genuine smile. Do NOT widen the mouth or show more teeth dramatically; "
+    "just a gentle, natural improvement. Preserve her exact facial features, "
+    "eye shape, nose, jawline and hair.\n"
+    "Keep skin texture realistic — not airbrushed. Maintain editorial portrait "
+    "quality. Output one image."
 )
 
 
@@ -37,15 +40,20 @@ async def main():
     if not api_key:
         sys.exit("EMERGENT_LLM_KEY missing")
 
-    print("Downloading source image…")
-    with urllib.request.urlopen(SRC_URL) as r:
-        src_bytes = r.read()
+    print("Loading source image…")
+    if LOCAL_SRC.exists():
+        src_bytes = LOCAL_SRC.read_bytes()
+        print(f"  using local: {LOCAL_SRC}")
+    else:
+        with urllib.request.urlopen(SRC_URL) as r:
+            src_bytes = r.read()
+        print("  downloaded from URL")
     src_b64 = base64.b64encode(src_bytes).decode("utf-8")
     print(f"  source size: {len(src_bytes)} bytes")
 
     chat = LlmChat(
         api_key=api_key,
-        session_id="poet-hero-enhance",
+        session_id="poet-hero-refine",
         system_message="You are a professional editorial portrait retoucher.",
     ).with_model("gemini", "gemini-3.1-flash-image-preview").with_params(
         modalities=["image", "text"]
