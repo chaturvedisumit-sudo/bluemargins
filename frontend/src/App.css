@@ -1,34 +1,178 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.App {
+  background-color: #040810;
+  color: #F1F5F9;
+  font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.font-serif-display {
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.App-link {
-    color: #61dafb;
+.font-sans-ui {
+  font-family: 'Outfit', sans-serif;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Grain texture overlay */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* Animated underline for nav links */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #D4B886;
+  transition: width 0.4s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Postcard frame */
+.postcard {
+  background: #f3ead7;
+  padding: 18px 18px 60px 18px;
+  position: relative;
+  box-shadow:
+    0 25px 60px -20px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  transform: rotate(-2.2deg);
+  transition: transform 0.6s ease;
+}
+.postcard:hover {
+  transform: rotate(-1deg) translateY(-4px);
+}
+.postcard::before {
+  content: "POSTCARDS & POETRY  •  EST. 2025";
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: #5b4a2e;
+  text-transform: uppercase;
+}
+.postcard::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 46px;
+  height: 56px;
+  background:
+    linear-gradient(135deg, #1a2a3f 0%, #4a607a 100%);
+  border: 3px solid #f3ead7;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.postcard-stamp-text {
+  position: absolute;
+  top: 76px;
+  right: 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: #5b4a2e;
+  letter-spacing: 0.1em;
+  transform: rotate(-8deg);
+  z-index: 2;
+}
+
+/* Selection color */
+::selection {
+  background: #D4B886;
+  color: #040810;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #040810;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a2235;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3550;
+}
+
+/* Custom cursor accent on poetry blocks */
+.poem-block {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.poem-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #D4B886, transparent);
+}
+
+/* Book row hover */
+.book-row {
+  transition: padding 0.4s ease, background 0.4s ease;
+}
+.book-row:hover {
+  padding-left: 1.5rem;
+  background: rgba(212, 184, 134, 0.04);
+}
+.book-row:hover .book-arrow {
+  transform: translateX(8px);
+  opacity: 1;
+}
+.book-arrow {
+  transform: translateX(0);
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Floating palm decoration */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+.float-slow {
+  animation: float-slow 8s ease-in-out infinite;
 }
