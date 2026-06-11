@@ -83,8 +83,8 @@ export default function Hero() {
               <img
                 src={POET_IMG}
                 alt="Shalini Chaturvedi"
-                className="w-full h-[420px] object-cover"
-                style={{ filter: "saturate(0.9) contrast(1.02)" }}
+                className="w-full h-[520px] object-cover"
+                style={{ filter: "saturate(0.95) contrast(1.02)", objectPosition: "50% 30%" }}
                 data-testid="hero-poet-image"
               />
               <div className="postcard-stamp-text">par avion</div>
