@@ -11,31 +11,28 @@ from emergentintegrations.llm.chat import LlmChat, UserMessage, ImageContent
 
 load_dotenv(Path(__file__).resolve().parent.parent / "backend" / ".env")
 
-SRC_URL = "https://customer-assets.emergentagent.com/job_5518da31-3818-4830-8b4a-5491945b0483/artifacts/q983tzlw_20260426_205838.jpg"
-LOCAL_SRC = Path("/app/frontend/public/poet-hero.jpg")
+SRC_URL = "https://customer-assets.emergentagent.com/job_loveletterstothesea/artifacts/4h8hhi24_file_0000000030d072099304e5764164a1e5.png"
+LOCAL_SRC = Path("/tmp/_unused_force_url.bin")
 DEST_DIR = Path("/app/frontend/public")
 DEST_PATH = DEST_DIR / "poet-hero.jpg"
 
 PROMPT = (
-    "Refine THIS portrait. Keep EVERYTHING else identical: same woman, same "
-    "identity, same dress, same necklace, same soft half-smile, same teal & "
-    "orange cinematic grade, same vignette, same crop, same handwritten "
-    "caption \"from somewhere by the sea — S.\" in the bottom right, same "
-    "background (sea, palms, pool, city lights).\n\n"
-    "ONE adjustment only: even out the lighting on her SKIN. Right now her "
-    "FOREHEAD, NECK, and SHOULDERS are too dark / underexposed. Selectively "
-    "lift the brightness on those specific areas:\n"
-    "- Forehead: brighten and even it out so it matches the cheeks.\n"
-    "- Neck: lift the shadow under the jaw and across the neck so the skin "
-    "tone reads warm and visible.\n"
-    "- Shoulders / collarbone / upper chest: brighten the exposed skin so it "
-    "matches the face — currently it's swallowed by shadow.\n\n"
-    "Make her overall skin tone look evenly lit and healthy across face, "
-    "neck, and shoulders, as if a large soft fill light were lifting her "
-    "whole upper body. STILL no flash look — soft, natural, warm ambient "
-    "lift. Do NOT change facial features, expression, hair, clothing, "
-    "background brightness, the caption text, or the color grade. Realistic "
-    "skin texture, no airbrushing. Output one image."
+    "Refine THIS portrait into a polished editorial POSTCARD of the same "
+    "woman. The exposure and color are already great — keep them. Apply only "
+    "these light treatments:\n\n"
+    "1) GENTLE VIGNETTE: Add a very subtle dark vignette around the edges so "
+    "the eye is drawn to her face. Soft, not heavy.\n\n"
+    "2) HANDWRITTEN CAPTION OVERLAY: At the bottom-right of the image, "
+    "overlay a SMALL handwritten cursive ink caption in a light cream/ivory "
+    "color at ~70% opacity, as if written with a fountain pen across the "
+    "photo. Text exactly: \"from somewhere by the sea — S.\" Keep the "
+    "handwriting elegant and unobtrusive — no more than about 6% of the "
+    "image width. Do NOT add any other text, stamps, logos, watermarks, "
+    "borders, or frames.\n\n"
+    "3) Preserve her identity, hair, dress, jewellery, smile, the bougainvillea, "
+    "the palms, the sea, the pool, and the city lights exactly. Maintain "
+    "sharp editorial quality and realistic skin texture. Output a single "
+    "magazine-quality image."
 )
 
 
