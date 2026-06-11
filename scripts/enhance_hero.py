@@ -11,7 +11,7 @@ from emergentintegrations.llm.chat import LlmChat, UserMessage, ImageContent
 
 load_dotenv(Path(__file__).resolve().parent.parent / "backend" / ".env")
 
-SRC_URL = "https://customer-assets.emergentagent.com/job_loveletterstothesea/artifacts/4h8hhi24_file_0000000030d072099304e5764164a1e5.png"
+SRC_URL = "https://customer-assets.emergentagent.com/job_loveletterstothesea/artifacts/gtt9vzkg_4d397274-6555-4149-9379-d184024f6748.jpeg"
 LOCAL_SRC = Path("/tmp/_unused_force_url.bin")
 DEST_DIR = Path("/app/frontend/public")
 DEST_PATH = DEST_DIR / "poet-hero.jpg"
