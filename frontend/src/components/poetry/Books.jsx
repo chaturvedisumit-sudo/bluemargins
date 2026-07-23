@@ -2,6 +2,13 @@ import { ArrowUpRight } from "lucide-react";
 
 const UPCOMING = [
   {
+    id: "sea-sand-wind",
+    year: "Now — Pre-order",
+    title: "Sea, Sand, Wind",
+    note: "The debut hardcover. Verses shaped by shoreline weather.",
+    status: "Pre-order now",
+  },
+  {
     id: "salt-silence",
     year: "Spring 2026",
     title: "The Salt and the Silence",
