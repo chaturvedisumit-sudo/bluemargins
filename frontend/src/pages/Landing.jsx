@@ -4,7 +4,6 @@ import Hero from "@/components/bluemargins/Hero";
 import About from "@/components/bluemargins/About";
 import Poems from "@/components/bluemargins/Poems";
 import Journal from "@/components/bluemargins/Journal";
-import FeaturedQuote from "@/components/bluemargins/FeaturedQuote";
 import Contact from "@/components/bluemargins/Contact";
 import Footer from "@/components/bluemargins/Footer";
 
@@ -37,7 +36,6 @@ export default function Landing() {
         <Hero />
         <About />
         <Poems />
-        <FeaturedQuote />
         <Journal />
         <Contact />
       </main>
