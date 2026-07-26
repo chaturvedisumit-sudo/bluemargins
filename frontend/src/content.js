@@ -118,7 +118,7 @@ export const books = {
       description:
         "In Sea, Sand, Wind, feel the verses shapeshift from prayer-like serenity to a stormy flux of emotions, to depict the vastness inside the crumbling, sand-crusted walls of a human body waning softly with the winds of time.",
       links: [
-        { label: "Amazon", href: "https://www.amazon.in/dp/B0H9LYMYY5Z" },
+        { label: "Amazon", href: "https://amzn.in/d/05kE1Mft" },
         {
           label: "Notion Press",
           href: "https://direct.notionpress.com/in/read/sea-sand-wind-hardcover",
