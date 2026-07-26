@@ -8,10 +8,10 @@ export default function Nav({ active }) {
 
   return (
     <header
-      className="sticky top-0 z-50 bg-[#FBF8F1]/85 backdrop-blur-sm border-b border-[#295A9B]/12"
+      className="relative z-50 bg-transparent"
       data-testid="main-navigation"
     >
-      <div className="max-w-[1280px] mx-auto pl-[76px] pr-[76px] max-[900px]:px-6 h-20 flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto pl-[76px] pr-[76px] max-[900px]:px-6 h-24 flex items-center justify-between">
         <Logo />
 
         <nav className="hidden md:flex items-center gap-9" aria-label="Primary">
