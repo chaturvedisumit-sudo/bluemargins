@@ -1,36 +1,10 @@
 import { books, site } from "@/content";
 import { ArrowUpRight } from "lucide-react";
+import seaSandWind from "@/assets/book-sea-sand-wind.webp";
 
-// Elegant ivory-and-blue book cover rendered in CSS/SVG (no raster/text image)
-function BookCover({ title }) {
-  return (
-    <div
-      className="relative w-[210px] max-w-full aspect-[3/4] bg-[#FBF8F1] border border-[#295A9B]/30 shadow-[0_18px_40px_-22px_rgba(18,58,112,0.45)] shrink-0"
-      aria-hidden="true"
-    >
-      {/* spine line */}
-      <div className="absolute inset-y-0 left-3 w-px bg-[#295A9B]/25" />
-      {/* top label */}
-      <p className="absolute top-8 inset-x-0 text-center font-body text-[0.6rem] uppercase tracking-[0.35em] text-[#295A9B]">
-        Poems
-      </p>
-      {/* title */}
-      <div className="absolute inset-x-6 top-1/2 -translate-y-1/2 text-center">
-        <p className="font-display text-[1.7rem] leading-[1.05] italic text-[#123A70]">
-          {title}
-        </p>
-        <p className="mt-4 font-body text-[0.62rem] uppercase tracking-[0.3em] text-[#295A9B]/80">
-          {site.author}
-        </p>
-      </div>
-      {/* watercolor wave line-art at base */}
-      <svg viewBox="0 0 210 40" className="absolute bottom-6 inset-x-0 w-full" fill="none" aria-hidden="true">
-        <path d="M18 20c22-10 44 8 66 0s44-12 66-2 30 6 42 2" stroke="#295A9B" strokeWidth="1" opacity="0.5" strokeLinecap="round" />
-        <path d="M18 27c22-8 44 6 66 0s44-9 66-1 30 5 42 1" stroke="#295A9B" strokeWidth="1" opacity="0.3" strokeLinecap="round" />
-      </svg>
-    </div>
-  );
-}
+const COVERS = {
+  "sea-sand-wind": seaSandWind,
+};
 
 export default function Books() {
   return (
@@ -52,7 +26,13 @@ export default function Books() {
               data-testid={`book-item-${b.id}`}
             >
               <div className="sm:col-span-4 flex justify-center sm:justify-start">
-                <BookCover title={b.title} />
+                <img
+                  src={COVERS[b.cover]}
+                  alt={`Front cover of ${b.title} by ${site.author}`}
+                  className="w-[210px] max-w-full h-auto shadow-[0_20px_44px_-20px_rgba(18,58,112,0.5)] ring-1 ring-[#295A9B]/15"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
 
               <div className="sm:col-span-8">

@@ -114,8 +114,9 @@ export const books = {
       title: "Sea, Sand, Wind",
       format: "Hardcover",
       status: "Available now",
-      // PLACEHOLDER: replace with a real description of the book
-      description: "[Add a short description of the book here.]",
+      cover: "sea-sand-wind",
+      description:
+        "In Sea, Sand, Wind, feel the verses shapeshift from prayer-like serenity to a stormy flux of emotions, to depict the vastness inside the crumbling, sand-crusted walls of a human body waning softly with the winds of time.",
       links: [
         { label: "Amazon", href: "https://www.amazon.in/dp/B0H9LYMYY5Z" },
         {
