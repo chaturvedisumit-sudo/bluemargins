@@ -41,6 +41,17 @@ class ContactCreate(BaseModel):
     message: str = Field(min_length=1, max_length=4000)
 
 
+class SubscribeCreate(BaseModel):
+    email: EmailStr
+
+
+class Subscriber(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    email: str
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+
 class ContactMessage(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
@@ -94,6 +105,21 @@ async def list_contacts():
         if isinstance(it.get('timestamp'), str):
             it['timestamp'] = datetime.fromisoformat(it['timestamp'])
     return items
+
+
+@api_router.post("/subscribe", response_model=Subscriber)
+async def subscribe(payload: SubscribeCreate):
+    email = payload.email.lower()
+    existing = await db.subscribers.find_one({"email": email}, {"_id": 0})
+    if existing:
+        if isinstance(existing.get('timestamp'), str):
+            existing['timestamp'] = datetime.fromisoformat(existing['timestamp'])
+        return Subscriber(**existing)
+    sub = Subscriber(email=email)
+    doc = sub.model_dump()
+    doc['timestamp'] = doc['timestamp'].isoformat()
+    await db.subscribers.insert_one(doc)
+    return sub
 
 
 app.include_router(api_router)

@@ -1,169 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=Caveat:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #123A70;
+  --midnight: #0E2B52;
+  --manuscript: #295A9B;
+  --powder: #DCE8F3;
+  --pale: #EDF3F8;
+  --ivory: #FBF8F1;
+  --paper: #FFFDF8;
+  --body: #34383D;
+  --beige: #EDE6DA;
+}
 
 html {
   scroll-behavior: smooth;
 }
 
 .App {
-  background-color: #F5EBD3;
-  color: #1E3A4A;
-  font-family: 'Outfit', sans-serif;
+  background-color: var(--ivory);
+  color: var(--body);
+  font-family: 'Source Serif 4', Georgia, serif;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-.font-serif-display {
-  font-family: 'Cormorant Garamond', serif;
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
-.font-sans-ui {
-  font-family: 'Outfit', sans-serif;
+.font-body {
+  font-family: 'Source Serif 4', Georgia, serif;
 }
 
-/* Grain texture overlay */
-.grain::before {
-  content: "";
+.font-hand {
+  font-family: 'Caveat', cursive;
+}
+
+/* ---- Blue page-margin lines ---- */
+.margin-rails {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.06;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  z-index: 40;
 }
-
-/* Animated underline for nav links */
-.nav-link {
-  position: relative;
-  transition: color 0.3s ease;
-}
-.nav-link::after {
+.margin-rails::before,
+.margin-rails::after {
   content: "";
   position: absolute;
-  bottom: -4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(41, 90, 155, 0.28);
+}
+.margin-rails::before { left: 56px; }
+.margin-rails::after { right: 56px; }
+/* faint secondary hairline (like a ruled double margin) */
+.margin-rails-inner::before,
+.margin-rails-inner::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(41, 90, 155, 0.12);
+  pointer-events: none;
+  z-index: 40;
+}
+.margin-rails-inner::before { left: 62px; }
+.margin-rails-inner::after { right: 62px; }
+
+@media (max-width: 900px) {
+  .margin-rails::before { left: 20px; }
+  .margin-rails::after { right: 20px; }
+  .margin-rails-inner::before,
+  .margin-rails-inner::after { display: none; }
+}
+@media (max-width: 520px) {
+  .margin-rails::before,
+  .margin-rails::after { display: none; }
+}
+
+/* ---- Links & nav underline ---- */
+.link-underline {
+  position: relative;
+  transition: color 150ms ease;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
   left: 0;
+  bottom: -4px;
   width: 0;
   height: 1px;
-  background: #C76F4E;
-  transition: width 0.4s ease;
+  background: var(--ink);
+  transition: width 160ms ease;
 }
-.nav-link:hover::after,
-.nav-link.active::after {
+.link-underline:hover::after,
+.link-underline.is-active::after {
   width: 100%;
 }
 
-/* Reveal-on-scroll */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+/* ---- Paper cards ---- */
+.paper-card {
+  background: var(--paper);
+  border: 1px solid rgba(41, 90, 155, 0.16);
+  box-shadow: 0 1px 2px rgba(18, 58, 112, 0.04);
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+.paper-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px rgba(18, 58, 112, 0.28);
 }
 
-/* Postcard frame — bright white card on the sand background */
-.postcard {
-  background: #FFFBF1;
-  padding: 18px 18px 22px 18px;
+/* deckled left edge accent for poem cards */
+.deckle {
   position: relative;
-  box-shadow:
-    0 30px 60px -25px rgba(30, 58, 74, 0.35),
-    0 0 0 1px rgba(30, 58, 74, 0.08) inset;
-  transform: rotate(-2.2deg);
-  transition: transform 0.6s ease;
 }
-.postcard:hover {
-  transform: rotate(-1deg) translateY(-4px);
-}
-.postcard::before {
-  content: "";
-}
-.postcard::after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  right: 14px;
-  width: 46px;
-  height: 56px;
-  background:
-    linear-gradient(135deg, #2D6E7E 0%, #5DA6B5 100%);
-  border: 3px solid #FFFBF1;
-  box-shadow: 0 0 0 1px rgba(30, 58, 74, 0.15);
-}
-
-.postcard-stamp-text {
-  position: absolute;
-  top: 76px;
-  right: 14px;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 11px;
-  color: #8C6E3F;
-  letter-spacing: 0.1em;
-  transform: rotate(-8deg);
-  z-index: 2;
-}
-
-/* Selection color */
-::selection {
-  background: #C76F4E;
-  color: #FFFBF1;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #ECE0C4;
-}
-::-webkit-scrollbar-thumb {
-  background: #C8B58A;
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #B79E6E;
-}
-
-/* Custom cursor accent on poetry blocks */
-.poem-block {
-  position: relative;
-  padding-left: 2.5rem;
-}
-.poem-block::before {
+.deckle::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, #C76F4E, transparent);
-}
-
-/* Book row hover */
-.book-row {
-  transition: padding 0.4s ease, background 0.4s ease;
-}
-.book-row:hover {
-  padding-left: 1.5rem;
-  background: rgba(199, 111, 78, 0.06);
-}
-.book-row:hover .book-arrow {
-  transform: translateX(8px);
-  opacity: 1;
-}
-.book-arrow {
-  transform: translateX(0);
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, var(--manuscript), transparent);
   opacity: 0.5;
-  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(1deg); }
+::selection {
+  background: var(--powder);
+  color: var(--ink);
 }
-.float-slow {
-  animation: float-slow 8s ease-in-out infinite;
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: #cdd9e6; }
+::-webkit-scrollbar-thumb:hover { background: #b6c7da; }
+
+/* focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--manuscript);
+  outline-offset: 2px;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }

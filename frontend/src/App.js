@@ -16,10 +16,10 @@ function App() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: "#FFFBF1",
-            border: "1px solid rgba(30,58,74,0.12)",
-            color: "#1E3A4A",
-            fontFamily: "'Outfit', sans-serif",
+            background: "#FFFDF8",
+            border: "1px solid rgba(41,90,155,0.22)",
+            color: "#123A70",
+            fontFamily: "'Source Serif 4', Georgia, serif",
           },
         }}
       />

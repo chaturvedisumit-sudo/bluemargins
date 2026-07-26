@@ -1,37 +1,18 @@
 import { useEffect, useState } from "react";
-import Nav from "@/components/poetry/Nav";
-import Hero from "@/components/poetry/Hero";
-import Books from "@/components/poetry/Books";
-import Poems from "@/components/poetry/Poems";
-import Shop from "@/components/poetry/Shop";
-import Contact from "@/components/poetry/Contact";
-import Footer from "@/components/poetry/Footer";
-
-const useReveal = () => {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-};
+import Nav from "@/components/bluemargins/Nav";
+import Hero from "@/components/bluemargins/Hero";
+import About from "@/components/bluemargins/About";
+import Poems from "@/components/bluemargins/Poems";
+import Journal from "@/components/bluemargins/Journal";
+import FeaturedQuote from "@/components/bluemargins/FeaturedQuote";
+import Contact from "@/components/bluemargins/Contact";
+import Footer from "@/components/bluemargins/Footer";
 
 export default function Landing() {
-  useReveal();
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "books", "poems", "shop", "contact"];
+    const sections = ["home", "about", "poems", "journal", "contact"];
     const handler = () => {
       const y = window.scrollY + window.innerHeight / 3;
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -48,13 +29,16 @@ export default function Landing() {
   }, []);
 
   return (
-    <div className="grain min-h-screen bg-[#F5EBD3] text-[#1E3A4A]" data-testid="landing-root">
+    <div className="relative min-h-screen bg-[#FBF8F1]" data-testid="landing-root">
+      {/* fixed blue page-margin rails */}
+      <div className="margin-rails margin-rails-inner" aria-hidden="true" />
       <Nav active={active} />
       <main>
         <Hero />
-        <Books />
+        <About />
         <Poems />
-        <Shop />
+        <FeaturedQuote />
+        <Journal />
         <Contact />
       </main>
       <Footer />
