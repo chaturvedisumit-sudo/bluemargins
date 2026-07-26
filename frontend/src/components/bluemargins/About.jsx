@@ -30,7 +30,7 @@ export default function About() {
           {/* Inkwell watercolor (portrait-replaceable) */}
           <div className="md:col-span-3">
             <div
-              className="mx-auto md:mx-0 w-[240px] h-[240px] rounded-full overflow-hidden ring-1 ring-[#295A9B]/25"
+              className="relative mx-auto md:mx-0 w-[240px] h-[240px] rounded-full overflow-hidden ring-2 ring-[#295A9B]/60 ring-offset-4 ring-offset-[#EFE9DC] shadow-[0_0_0_1px_rgba(41,90,155,0.25)]"
               data-testid="about-portrait-placeholder"
             >
               <img
@@ -42,6 +42,8 @@ export default function About() {
                 width="900"
                 height="900"
               />
+              {/* soft blue hue wash */}
+              <div className="absolute inset-0 bg-[#295A9B]/18 mix-blend-multiply pointer-events-none" aria-hidden="true" />
             </div>
           </div>
 
