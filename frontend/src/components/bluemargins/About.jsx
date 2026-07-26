@@ -1,8 +1,6 @@
 import { about, site } from "@/content";
 import Botanical from "@/components/bluemargins/Botanical";
-// Decorative About illustration. NOTE: this watercolor may be replaced with
-// Shalini's photograph — see about.portraitAlt in content.js.
-import inkwell from "@/assets/about-inkwell.webp";
+import portrait from "@/assets/author-portrait.webp";
 
 function Paragraph({ block }) {
   if (block.type === "lead") {
@@ -36,13 +34,13 @@ export default function About() {
               data-testid="about-portrait-placeholder"
             >
               <img
-                src={inkwell}
-                alt={about.portraitAlt}
+                src={portrait}
+                alt="Shalini, the poet, by the sea at sunset"
                 className="w-full h-full object-cover"
                 loading="lazy"
                 decoding="async"
-                width="1024"
-                height="1024"
+                width="900"
+                height="900"
               />
             </div>
           </div>
