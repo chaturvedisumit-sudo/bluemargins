@@ -3,6 +3,7 @@ import Nav from "@/components/bluemargins/Nav";
 import Hero from "@/components/bluemargins/Hero";
 import About from "@/components/bluemargins/About";
 import Poems from "@/components/bluemargins/Poems";
+import Books from "@/components/bluemargins/Books";
 import Journal from "@/components/bluemargins/Journal";
 import Contact from "@/components/bluemargins/Contact";
 import Footer from "@/components/bluemargins/Footer";
@@ -11,7 +12,7 @@ export default function Landing() {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "about", "poems", "journal", "contact"];
+    const sections = ["home", "about", "poems", "books", "journal", "contact"];
     const handler = () => {
       const y = window.scrollY + window.innerHeight / 3;
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -36,6 +37,7 @@ export default function Landing() {
         <Hero />
         <About />
         <Poems />
+        <Books />
         <Journal />
         <Contact />
       </main>

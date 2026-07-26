@@ -23,6 +23,7 @@ export const nav = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "poems", label: "Poems" },
+  { id: "books", label: "Books" },
   { id: "journal", label: "Journal" },
   { id: "contact", label: "Contact" },
 ];
@@ -99,6 +100,33 @@ export const poems = [
     art: "page",
   },
 ];
+
+// Published & upcoming books.
+// 'Sea, Sand, Wind' details/links are REAL. The description is a placeholder —
+// replace description text; add more book objects as new titles publish.
+export const books = {
+  heading: "Books",
+  intro:
+    "Collected work in print — for the shelf, the bedside, the coat pocket.",
+  items: [
+    {
+      id: "sea-sand-wind",
+      title: "Sea, Sand, Wind",
+      format: "Hardcover",
+      status: "Available now",
+      // PLACEHOLDER: replace with a real description of the book
+      description: "[Add a short description of the book here.]",
+      links: [
+        { label: "Amazon", href: "https://www.amazon.in/dp/B0H9LYMYY5Z" },
+        {
+          label: "Notion Press",
+          href: "https://direct.notionpress.com/in/read/sea-sand-wind-hardcover",
+        },
+      ],
+    },
+  ],
+};
+
 
 // PLACEHOLDER: replace with real fragments, essays, and notes.
 // Do NOT invent essays or personal stories.
