@@ -1,0 +1,26 @@
+{
+  "summary": "Frontend-only regression test of Blue Margins after backend decoupling + dependency cleanup. Verified: (1) index.html head contains NO 'posthog', 'emergent-main.js', or 'assets.emergent.sh' strings and DOES contain <link rel=\"canonical\" href=\"https://bluemargins.com/\"> plus og:url; (2) Newsletter fully removed — no [data-testid='newsletter-form'|'newsletter-input-email'|'newsletter-submit-btn'], text 'Stay in the Margins' absent, zero Subscribe buttons in DOM; (3) Contact section renders with 'Let’s Connect' heading, data-testid='contact-email' + 2 social links (contact-social-instagram, contact-social-substack), featured quote blockquote and circular BM seal; (4) ZERO network requests to any /api/* path observed during full-page scroll, poem-modal open/close cycles, and nav-link clicks (page.on('request') captured empty list); (5) Poems modal: poem-card-wallflowers-read opens data-testid='poem-modal' containing 'Wallflowers don' body text, closes on Escape; same open/close verified for poem-card-cashmere-read and poem-card-breakfast-in-florence-read; (6) Books: 'Sea, Sand, Wind' text present, book-sea-sand-wind-link-amazon href='https://amzn.in/d/05kE1Mft' target=_blank, book-sea-sand-wind-link-notion-press href='https://direct.notionpress.com/in/read/sea-sand-wind-hardcover' target=_blank; (7) All 6 nav links (home/about/poems/books/journal/contact) exist and nav-link-poems scrolls to poems section (scrollY=1896); (8) About section shows 'Hi, I’m Shalini.', 'If I were a verb…', 'Who are you when nobody's watching?', 'Welcome.' and about-portrait-placeholder; (9) Mobile 390x844: mobile-menu-toggle opens drawer, nav-link-mobile-poems closes menu and scrolls to y=2640, scrollWidth==clientWidth==390 (no horizontal scroll), Contact section balanced (height 595.5px, seal+quote+links rendered cleanly with no empty gap where the newsletter used to be); (10) frontend/package.json contains NO react-day-picker/date-fns/axios and NO yarn packageManager field; /app/frontend/src/components/ui/calendar.jsx has been deleted; no axios or REACT_APP_BACKEND_URL references remain in /app/frontend/src.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Contact (mobile + desktop)", "issues": ["Email/social values still render placeholders — '[Add public email address]', '[Add Instagram profile]', '[Add profile or publication link]'. Visible to end users; replace before shipping to bluemargins.com. (Carry-over from iteration_2; not a regression from this cleanup.)"]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Replace placeholder text in /app/frontend/src/content.js (site.email + site.socials) with real handles before the Cloudflare Pages launch — currently users see literal '[Add public email address]' etc."
+  ],
+  "critical_code_review_comments": [
+    "Frontend is fully decoupled from backend — good. Since deployment target is Cloudflare Pages (static), consider also removing REACT_APP_BACKEND_URL from /app/frontend/.env to avoid confusion (currently unused but still set)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not tested per request)", "frontend": "100%"},
+  "seed_data_creation": "None — no backend calls made.",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "test_credentials": "N/A — no auth in app",
+  "context_for_next_testing_agent": "Frontend is a static-only React app. Newsletter has been removed; Contact.jsx has no axios/REACT_APP_BACKEND_URL imports. All /api requests must remain zero on Cloudflare Pages. Book Amazon URL updated to https://amzn.in/d/05kE1Mft. Mobile menu uses nav-link-mobile-{id} testids distinct from desktop nav-link-{id}. Only lingering non-regression cosmetic issue: content.js still has placeholder email/social strings.",
+  "rca_of_the_issue": "N/A — no defects found. All 12 regression checkpoints from the review request passed."
+}
