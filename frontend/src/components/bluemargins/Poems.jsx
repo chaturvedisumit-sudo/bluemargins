@@ -28,6 +28,11 @@ export default function Poems() {
             >
               <PoemArt kind={p.art} className="w-9 h-9 shrink-0 mt-1" />
               <div className="flex flex-col">
+                {p.award && (
+                  <p className="font-body text-[0.68rem] uppercase tracking-[0.2em] text-[#295A9B] mb-2">
+                    {p.award}
+                  </p>
+                )}
                 <h3 className="font-display text-2xl text-[#123A70] leading-tight mb-3">
                   {p.title}
                 </h3>

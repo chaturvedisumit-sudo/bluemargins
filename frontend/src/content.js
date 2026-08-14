@@ -72,32 +72,106 @@ export const about = {
   ],
 };
 
-// PLACEHOLDER: replace titles, excerpts, categories, and links
-// with real poems once available. Do NOT invent poetry.
+// Real poems by Shalini Chaturvedi. `excerpt` is what shows on the card;
+// `full` is the complete poem for future detail pages. Categories/awards
+// only appear when non-empty.
 export const poems = [
   {
-    id: "poem-1",
-    title: "[Poem Title One]",
-    excerpt: "[Add a short three-to-five-line excerpt from the poem here.]",
-    category: "[Poetry category]",
+    id: "wallflowers",
+    title: "Wallflowers",
+    award: "Winner — MyStory Tata Literature Live! 2023",
+    excerpt:
+      "They find mirth in the strangest places\ntendrils twined to the outskirts of wind's frenzy\ngrowing in the bramble of stiff recluse\nbrimming in dust of unworn dancing shoes.",
     href: "#poems",
     art: "branch",
+    full: `Wallflowers don't know where to bloom
+so they sprout within shade of bowers
+camouflaged in dense foliage of leaves
+their petaled laughs within green rustles sieged
+
+They find mirth in the strangest places
+tendrils twined to outskirts of wind's frenzy
+growing in the bramble of stiff recluse
+brimming in dust of unworn dancing shoes
+
+A yellow bee may momentarily flit about
+to unfurl their breadth of existence in sundry notes
+they bleed their faint scent in ruminating stains
+and curl moist and still, as after the tumult of rain
+
+They can't be coaxed into feverish bursts of sway
+underneath dark-lidded dreams, they're always tipping astray`,
   },
   {
-    id: "poem-2",
-    title: "[Poem Title Two]",
-    excerpt: "[Add a short three-to-five-line excerpt from the poem here.]",
-    category: "[Poetry category]",
+    id: "cashmere",
+    // PLACEHOLDER: title — set to "Untitled" until a final title is provided
+    title: "Untitled",
+    excerpt:
+      "My chafed lips draw a draft of mildewed air\nWith damp embers of kisses they do gleam\nHands tucked in the raining feel of cashmere\nA matronly warmth sewn between its seams",
     href: "#poems",
     art: "moon",
+    full: `A sylvan frost gently nips my ear lobes
+Fluttering ghosts caressing soft and gray
+Sunlight dazzles my eyes in fraying strobes
+skidding, spiralling through tree-fringed walkways
+
+My chafed lips draw a draft of mildewed air
+With damp embers of kisses they do gleam
+Hands tucked in the raining feel of cashmere
+A matronly warmth sewn between its seams
+
+Twilight sings purple jazz to horizons
+Robins retreating with reluctant sighs
+Puddles beneath ice chime in oblivion
+their sinuous-flowing braid brittled dry
+
+And when I sleep, I fade as the cold earth below me
+Lofty promises tucked beneath a soft pillow crease.`,
   },
   {
-    id: "poem-3",
-    title: "[Poem Title Three]",
-    excerpt: "[Add a short three-to-five-line excerpt from the poem here.]",
-    category: "[Poetry category]",
+    id: "breakfast-in-florence",
+    title: "Breakfast in Florence",
+    excerpt:
+      "The barista serves\ncrystalline hearts on the house\non the side\nof a short, dark espresso",
     href: "#poems",
     art: "page",
+    full: `There's this breakfast place I know
+that serves great cornettos
+the kind of great
+a warm pastry can bring
+the kind of great
+a succulent peach can sing
+
+The barista serves
+crystalline hearts on the house
+on the side
+of a short, dark espresso
+on the side
+of a salt-sweet innuendo
+that I wouldn't have stripped through its foreign weaves
+was it not for the nude fresco sprawled in his iris
+
+so I hang this undulating endearment in a line
+separating each syllable crisp and dry
+making a mental note to locate its lingual wonk
+when ambling through the city's lovesick sidewalks
+but for now my tongue craves honey
+like a holed-up, groveling cat
+
+We eat and drink standing
+spilling crumbs of a rulebook in between loud gabs
+till our feet
+tingle like christmas bells
+till we're two fat silos
+hanging by a body's will
+to save six euros
+
+and just when we think
+we're belly-up in cream
+the hollow cornetto reveals its tart mystery
+and we fade
+melting into its liquid-brown vista
+just two sun-baked snowflakes.`,
   },
 ];
 
