@@ -16,12 +16,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: clip;
+}
+
 .App {
   background-color: var(--ivory);
   color: var(--body);
   font-family: 'Source Serif 4', Georgia, serif;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .font-display {
@@ -34,6 +37,11 @@ html {
 
 .font-hand {
   font-family: 'Caveat', cursive;
+}
+
+/* Anchor navigation offset so section headings don't sit under the sticky header */
+main section[id] {
+  scroll-margin-top: 6rem;
 }
 
 /* ---- Blue page-margin lines ---- */
