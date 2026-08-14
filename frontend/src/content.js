@@ -104,8 +104,8 @@ underneath dark-lidded dreams, they're always tipping astray`,
   },
   {
     id: "cashmere",
-    // PLACEHOLDER: title — set to "Untitled" until a final title is provided
-    title: "Untitled",
+    title: "A Wintry Beckoning",
+    award: "A Sonnet",
     excerpt:
       "My chafed lips draw a draft of mildewed air\nWith damp embers of kisses they do gleam\nHands tucked in the raining feel of cashmere\nA matronly warmth sewn between its seams",
     href: "#poems",
