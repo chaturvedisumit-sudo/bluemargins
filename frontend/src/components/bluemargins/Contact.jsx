@@ -1,11 +1,20 @@
-import { Mail, Instagram, BookOpen } from "lucide-react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import Seal from "@/components/bluemargins/Seal";
 import { site, featuredQuote } from "@/content";
+
+const MediumIcon = ({ size = 17, ...p }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...p}>
+    <ellipse cx="6.5" cy="12" rx="4.5" ry="6" />
+    <ellipse cx="16" cy="12" rx="2" ry="6" />
+    <ellipse cx="21" cy="12" rx="1" ry="6" />
+  </svg>
+);
 
 const iconFor = (label) => {
   const l = label.toLowerCase();
   if (l.includes("insta")) return Instagram;
-  if (l.includes("press") || l.includes("book") || l.includes("substack")) return BookOpen;
+  if (l.includes("linked")) return Linkedin;
+  if (l.includes("medium")) return MediumIcon;
   return Mail;
 };
 

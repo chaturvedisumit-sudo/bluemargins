@@ -11,11 +11,23 @@ export const site = {
   tagline: "Poetry and Writing by Shalini",
   seal: "Words Leave Echoes · Poems Leave Room",
   // PLACEHOLDER: replace with a real public email address
-  email: "[Add public email address]",
+  email: "shalini.poems@gmail.com",
   socials: [
-    // PLACEHOLDER: replace href + handle with real profiles
-    { label: "Instagram", handle: "[Add Instagram profile]", href: "#" },
-    { label: "Substack", handle: "[Add profile or publication link]", href: "#" },
+    {
+      label: "Instagram",
+      handle: "@shalinismusings",
+      href: "https://www.instagram.com/shalinismusings",
+    },
+    {
+      label: "Medium",
+      handle: "medium.com/@shalinic",
+      href: "https://medium.com/@shalinic",
+    },
+    {
+      label: "LinkedIn",
+      handle: "linkedin.com/in/shalini-chaturvedi",
+      href: "https://www.linkedin.com/in/shalini-chaturvedi-56a8a793",
+    },
   ],
 };
 
