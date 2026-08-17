@@ -29,7 +29,9 @@ export default function Journal() {
                 <p className="font-body text-[0.7rem] uppercase tracking-[0.2em] text-[#295A9B]">
                   {entry.kind}
                 </p>
-                <p className="font-body text-sm text-[#34383D]/60 mt-1">{entry.date}</p>
+                {entry.date && !entry.date.startsWith("[") && (
+                  <p className="font-body text-sm text-[#34383D]/60 mt-1">{entry.date}</p>
+                )}
               </div>
               <div className="col-span-12 md:col-span-9">
                 <h3 className="font-display text-2xl md:text-[1.7rem] text-[#123A70] leading-tight">
