@@ -44,7 +44,7 @@ export const hero = {
   heading: "If I were a verb, I’d be ruminate.",
   question: "Who are you when nobody’s watching?",
   support:
-    "Poems, fragments, essays, and thoughts from the quiet spaces before language fully knows what they are.",
+    "Poems, fragments, essays, and thoughts from a quiet introspection before they are paper-folded and poised to read.",
   primaryCta: { label: "Read the poems", href: "#poems" },
   secondaryCta: { label: "Meet Shalini", href: "#about" },
   marginNote: "In the space beside the words, I listen.",
