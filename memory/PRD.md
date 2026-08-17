@@ -22,13 +22,16 @@ Build a poetry landing page for Shalini Chaturvedi. Evolved into "Blue Margins" 
 - Real content: poems, essays/stories, book details, contact links in content.js
 - Responsive modals for full poems and journal entries
 - Sticky header navigation with correct scroll offsets
-- Books-specific scroll-margin-top fix (3.5rem vs global 6rem) to ensure full book cover visibility on common laptop viewports (Aug 2026)
+- Books-specific responsive scroll-margin-top fix:
+  - Mobile: `0.75rem` (tucks empty padding behind header for short viewports)
+  - Desktop (≥768px): `3.5rem` (comfortable offset for laptop screens)
+  - Ensures full book cover visibility without shrinking the cover or changing layout
 
 ## Prioritized Backlog
 - **P2**: Re-integrate newsletter subscription (user explicitly deferred for static deploy)
 
 ## Design Constraints
 - `overflow-x: clip` on body — required for sticky nav; do not revert
-- `scroll-margin-top: 6rem` global, `3.5rem` for #books — do not change without viewport testing
+- `scroll-margin-top: 6rem` global, responsive override for #books — do not change without viewport testing
 - No backend API calls unless user explicitly re-enables backend
 - All content changes go through `content.js`, not hardcoded in components

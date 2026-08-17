@@ -44,10 +44,16 @@ main section[id] {
   scroll-margin-top: 6rem;
 }
 /* Books section: tuck some of the top padding behind the header so the
-   full book cover is visible on common laptop viewports (e.g. 1366×768).
-   The hidden portion is plain background — no content is obscured. */
+   full book cover is visible on common viewports. On mobile, the shorter
+   viewport needs a more aggressive offset. Only plain ivory padding is
+   hidden behind the header — no content is obscured. */
 #books {
-  scroll-margin-top: 3.5rem;
+  scroll-margin-top: 0.75rem;
+}
+@media (min-width: 768px) {
+  #books {
+    scroll-margin-top: 3.5rem;
+  }
 }
 
 /* ---- Blue page-margin lines ---- */
