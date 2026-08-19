@@ -11,6 +11,27 @@ import Footer from "@/components/bluemargins/Footer";
 export default function Landing() {
   const [active, setActive] = useState("home");
 
+  /* ── Initial hash scroll ─────────────────────────────────────────
+     When the page is opened with a #hash (e.g. /#books), the browser
+     tries to scroll before React has rendered the target element.
+     After mount, we read the hash and scroll to the section ourselves.
+     Double-rAF ensures one paint cycle has completed so the element
+     exists in the DOM. scrollIntoView respects each section's
+     CSS scroll-margin-top, keeping headings clear of the sticky nav. */
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    let cancelled = false;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (cancelled) return;
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "instant" });
+      });
+    });
+    return () => { cancelled = true; };
+  }, []);
+
   useEffect(() => {
     const sections = ["home", "about", "poems", "books", "journal", "contact"];
     const handler = () => {
